@@ -8,6 +8,20 @@ data_directory = os.path.dirname(os.path.abspath(__file__))
 data_file = 'source-file/aoc-2018-02-input.txt'
 source_file = os.path.join(data_directory,data_file)
 
+def countLetters(rows):
+    unique_list = ''.join(set(rows))
+    return unique_list
+
+def countTwo():
+    
+    return False
+
+def countThree():
+    if countLetters(rows) > 2:
+        return True
+    else:
+        return False
+
 two_count = 0
 three_count = 0
 
@@ -16,7 +30,6 @@ with open(source_file) as f:
     data = f.read().splitlines()
     
     for rows in data:
-        unique_list = ''.join(set(rows))
         counter = Counter(rows)
         for char in unique_list:
             if counter[char] > 2:
